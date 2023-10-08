@@ -1,7 +1,11 @@
 let pos = 0;
 const pikaArray = [
-  ["./img/pika1.png", "./img/pika2.png", "./img/pika3.png", "./img/pika4.png"],
+  "./img/pika1.png",
+  "./img/pika2.png",
+  "./img/pika3.png",
+  "./img/pika4.png",
 ];
+
 let direction = 0;
 let focus = 0;
 let interval = null;
@@ -19,7 +23,7 @@ const checkPageBounds = (direction, imgWidth) => {
 };
 
 const Run = () => {
-  let img = document.getElementById("Pikachu");
+  let img = document.getElementById("pikachu");
   let imgWidth = img.width;
   if (focus === 3) {
     focus = 0;
@@ -27,7 +31,7 @@ const Run = () => {
     focus += 1;
   }
   direction = checkPageBounds(direction, imgWidth);
-  img.src = pikaArray[0][focus];
+  img.src = pikaArray[focus];
   if (direction) {
     pos -= 20;
     img.style.left = pos + "px";
